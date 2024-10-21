@@ -3,6 +3,8 @@
 	--primary-color: #1d4ed8;
 	--secondary-color: #1dd858;
 	--text-color: #0f2970;
+	--form: #1a141f;
+	--form-gray: #9a9a9b;
 	--placeholder-color: #f3faff;
 	--white: #ffffff;
 	--error-color: #ff5757;
@@ -56,4 +58,196 @@ img {
 	max-width: 100%;
 	height: auto;
 	display: block;
+}
+
+/* Container */
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+@media (min-width: 768px) {
+	.container {
+		display: inline-flex;
+		justify-content: space-between;
+		padding-inline: 0;
+		gap: 2rem;
+		padding-inline: 2rem;
+	}
+}
+/* Left side */
+.left-side {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-center;
+	align-items: start;
+	gap: 4rem;
+}
+
+/* Support footer */
+
+.left-side .support {
+	display: flex;
+	gap: 0.4rem;
+	height: 100%;
+	flex-direction: row;
+	align-items: end;
+	cursor: pointer;
+}
+.left-side .title {
+	font-size: 1.875rem;
+	text-transform: capitalize;
+	font-weight: 500;
+}
+
+/* Form */
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	width: 100%;
+}
+
+@media (min-width: 1200px) {
+	.form-container {
+		width: 60%;
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.form .form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.form-group label {
+	color: var(--form);
+}
+
+.form-group input {
+	font-family: inherit;
+	cursor: pointer;
+	border: 0;
+	padding: 0.75rem;
+	border: 1px solid var(--form-gray);
+	border-radius: 0.125rem;
+	transition: all 0.3s ease-in-out;
+}
+.form .message {
+	opacity: 0;
+	display: none;
+	transition: opacity 0.4s ease-in-out, display 0.3s ease-in allow-discrete;
+	margin-top: 0;
+}
+
+input:not(:placeholder-shown):invalid ~ .message {
+	opacity: 1; /* Fade in the message */
+	display: block; /* Display the message after transition */
+	color: var(--error-color);
+	margin-top: 0.25rem;
+}
+
+input:valid {
+	border-color: #1dd858;
+	background-image: url("./img/success.svg");
+	background-repeat: no-repeat;
+	background-position: calc(100% - 10px);
+	background-size: 20px;
+}
+input:not(:placeholder-shown):invalid {
+	border-color: var(--error-color);
+	background-image: url("./img/error.svg");
+	background-repeat: no-repeat;
+	background-position: calc(100% - 10px);
+	background-size: 20px;
+}
+
+.form-group input::placeholder {
+	color: var(--form-gray);
+	font-size: 14px;
+}
+
+.form-group input:focus {
+	outline: none;
+	border: transparent;
+	outline: 1px solid var(--primary-color);
+}
+
+.form-group input:focus::placeholder {
+	color: var(--form);
+}
+
+.form .actions {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+	color: var(--form);
+}
+
+.form-container .signup {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	border-top: 1px solid var(--form-gray);
+	padding-top: 2rem;
+}
+
+.form .actions a,
+.form-container .signup a {
+	text-decoration: underline;
+	color: var(--Informing-Link, #0f0bab);
+	text-align: right;
+}
+
+.form-group input[type="checkbox"] + label {
+	cursor: pointer;
+	position: relative;
+	margin-left: 1.5rem;
+}
+/* Estilo del botón deshabilitado por defecto */
+
+.form .btn-main {
+	padding: 0.75rem;
+	background-color: #9a9a9b;
+	cursor: not-allowed;
+	pointer-events: none;
+	border: 0;
+	color: var(--Grayscale-White, #fff);
+	border-radius: 0.25rem;
+	margin-top: 1rem;
+	text-transform: capitalize;
+	transition: background-color 0.3s ease-in-out;
+	color: #1a141f;
+}
+.form:has(input[type="password"]:valid) .btn-main {
+	background-color: var(--Corporate-blue-main, #1d4ed8);
+	color: white;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+.form:has(input[type="password"]:valid) .btn-main:hover {
+	background-color: var(--secondary-color);
+	color: var(--Grayscale-Black, #1a141f);
+}
+
+.imgHero {
+	display: none;
+}
+
+@media (min-width: 900px) {
+	.imgHero {
+		display: block;
+	}
 }
