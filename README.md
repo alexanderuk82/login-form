@@ -36,7 +36,7 @@ In this project, we demonstrate how to use modern CSS techniques such as:
 1. Clone this repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/alexanderuk82/login-form.git
    ```
 
 2. Open `index.html` in your browser to see the login interface in action.
@@ -46,3 +46,5 @@ In this project, we demonstrate how to use modern CSS techniques such as:
 ## Conclusion
 
 This project shows the power of modern CSS to handle what was once considered only achievable with JavaScript. With new properties like `transition-behavior` and pseudo-classes, we can now create interactive, accessible forms using CSS alone!
+
+If you're interested in learning more and expanding your skills, visit my **[YouTube channel](https://www.youtube.com/@uxuiconexioncreativa/videos)** for more tutorials and creative tips.
